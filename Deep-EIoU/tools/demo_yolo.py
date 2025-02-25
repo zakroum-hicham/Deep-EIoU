@@ -5,6 +5,7 @@ import numpy as np
 import time
 import cv2
 import torch
+from ultralytics import YOLO
 import sys
 sys.path.append('.')
 
@@ -171,12 +172,8 @@ class Predictor(object):
 
         with torch.no_grad():
             timer.tic()
-            outputs = self.model(img)
-            if self.decoder is not None:
-                outputs = self.decoder(outputs, dtype=outputs.type())
-            outputs = postprocess(
-                outputs, self.num_classes, self.confthre, self.nmsthre
-            )
+            outputs = self.model(img,conf=0.3, verbose=False)
+            outputs = outputs[0].boxes.data.cpu().numpy()
         return outputs, img_info
 
 def imageflow_demo(predictor, extractor, vis_folder, current_time, args):
@@ -271,27 +268,29 @@ def main(exp, args):
     if args.tsize is not None:
         exp.test_size = (args.tsize, args.tsize)
 
-    model = exp.get_model().to(args.device)
-    logger.info("Model Summary: {}".format(get_model_info(model, exp.test_size)))
-    model.eval()
+    # model = exp.get_model().to(args.device) $1
+    # logger.info("Model Summary: {}".format(get_model_info(model, exp.test_size)))
+    # model.eval()
 
-    if not args.trt:
-        if args.ckpt is None:
-            ckpt_file = "checkpoints/best_ckpt.pth.tar"
-        else:
-            ckpt_file = args.ckpt
-        logger.info("loading checkpoint")
-        ckpt = torch.load(ckpt_file, map_location="cpu")
-        # load the model state dict
-        model.load_state_dict(ckpt["model"])
-        logger.info("loaded checkpoint done.")
+    model = YOLO("./Deep-EIoU/checkpoints/best.pt")
 
-    if args.fuse:
-        logger.info("\tFusing model...")
-        model = fuse_model(model)
+    # if not args.trt:
+    #     if args.ckpt is None:
+    #         ckpt_file = "checkpoints/best_ckpt.pth.tar"
+    #     else:
+    #         ckpt_file = args.ckpt
+    #     logger.info("loading checkpoint")
+    #     ckpt = torch.load(ckpt_file, map_location="cpu")
+    #     # load the model state dict
+    #     model.load_state_dict(ckpt["model"])
+    #     logger.info("loaded checkpoint done.")
 
-    if args.fp16:
-        model = model.half()  # to FP16
+    # if args.fuse:
+    #     logger.info("\tFusing model...")
+    #     model = fuse_model(model)
+
+    # if args.fp16:
+    #     model = model.half()  # to FP16
 
     if args.trt:
         assert not args.fuse, "TensorRT model is not support model fusing!"
