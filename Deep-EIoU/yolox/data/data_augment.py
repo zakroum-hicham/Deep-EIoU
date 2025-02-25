@@ -197,7 +197,7 @@ def preproc(image, input_size, mean, std, swap=(2, 0, 1)):
         img,
         (int(img.shape[1] * r), int(img.shape[0] * r)),
         interpolation=cv2.INTER_LINEAR,
-    ).astype(float32)
+    ).astype(float)
     padded_img[: int(img.shape[0] * r), : int(img.shape[1] * r)] = resized_img
 
     padded_img = padded_img[:, :, ::-1]

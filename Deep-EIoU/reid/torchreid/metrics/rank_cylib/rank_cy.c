@@ -4837,14 +4837,14 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
  *         mAP += all_AP[q_idx]
  *     mAP /= num_valid_q             # <<<<<<<<<<<<<<
  * 
- *     return np.asarray(avg_cmc).astype(float32), mAP
+ *     return np.asarray(avg_cmc).astype(float), mAP
  */
   __pyx_v_mAP = (__pyx_v_mAP / __pyx_v_num_valid_q);
 
   /* "torchreid/metrics/rank_cylib/rank_cy.pyx":153
  *     mAP /= num_valid_q
  * 
- *     return np.asarray(avg_cmc).astype(float32), mAP             # <<<<<<<<<<<<<<
+ *     return np.asarray(avg_cmc).astype(float), mAP             # <<<<<<<<<<<<<<
  * 
  * 
  */
@@ -6149,14 +6149,14 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_market15
  *         mAP += all_AP[q_idx]
  *     mAP /= num_valid_q             # <<<<<<<<<<<<<<
  * 
- *     return np.asarray(avg_cmc).astype(float32), mAP
+ *     return np.asarray(avg_cmc).astype(float), mAP
  */
   __pyx_v_mAP = (__pyx_v_mAP / __pyx_v_num_valid_q);
 
   /* "torchreid/metrics/rank_cylib/rank_cy.pyx":243
  *     mAP /= num_valid_q
  * 
- *     return np.asarray(avg_cmc).astype(float32), mAP             # <<<<<<<<<<<<<<
+ *     return np.asarray(avg_cmc).astype(float), mAP             # <<<<<<<<<<<<<<
  * 
  * 
  */

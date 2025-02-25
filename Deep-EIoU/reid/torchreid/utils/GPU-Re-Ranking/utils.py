@@ -86,7 +86,7 @@ def evaluate_ranking_list(
         CMC = CMC + CMC_tmp
         ap += ap_tmp
 
-    CMC = CMC.astype(float32)
+    CMC = CMC.astype(float)
     CMC = CMC / len(query_label) #average CMC
     print(
         'Rank@1:%f Rank@5:%f Rank@10:%f mAP:%f' %

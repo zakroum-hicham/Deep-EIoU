@@ -45,7 +45,7 @@ class PA100K(Dataset):
             data = []
             for i in range(num_imgs):
                 name = names[i, 0][0]
-                attrs = labels[i, :].astype(float32)
+                attrs = labels[i, :].astype(float)
                 img_path = osp.join(self.data_dir, name)
                 data.append((img_path, attrs))
             return data

@@ -69,7 +69,7 @@ def eval_cuhk03(distmat, q_pids, g_pids, q_camids, g_camids, max_rank):
             masked_raw_cmc = raw_cmc[mask]
             _cmc = masked_raw_cmc.cumsum()
             _cmc[_cmc > 1] = 1
-            cmc += _cmc[:max_rank].astype(float32)
+            cmc += _cmc[:max_rank].astype(float)
 
         cmc /= num_repeats
         all_cmc.append(cmc)
@@ -84,7 +84,7 @@ def eval_cuhk03(distmat, q_pids, g_pids, q_camids, g_camids, max_rank):
 
     assert num_valid_q > 0, 'Error: all query identities do not appear in gallery'
 
-    all_cmc = np.asarray(all_cmc).astype(float32)
+    all_cmc = np.asarray(all_cmc).astype(float)
     all_cmc = all_cmc.sum(0) / num_valid_q
     mAP = np.mean(all_AP)
 
@@ -146,7 +146,7 @@ def eval_market1501(distmat, q_pids, g_pids, q_camids, g_camids, max_rank):
 
     assert num_valid_q > 0, 'Error: all query identities do not appear in gallery'
 
-    all_cmc = np.asarray(all_cmc).astype(float32)
+    all_cmc = np.asarray(all_cmc).astype(float)
     all_cmc = all_cmc.sum(0) / num_valid_q
     mAP = np.mean(all_AP)
 
