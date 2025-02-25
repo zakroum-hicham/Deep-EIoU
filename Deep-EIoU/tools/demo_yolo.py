@@ -153,22 +153,22 @@ class Predictor(object):
 
     def inference(self, img, timer):
         img_info = {"id": 0}
-        if isinstance(img, str):
-            img_info["file_name"] = osp.basename(img)
-            img = cv2.imread(img)
-        else:
-            img_info["file_name"] = None
+        # if isinstance(img, str):
+            # img_info["file_name"] = osp.basename(img)
+            # img = cv2.imread(img)
+        # else:
+            # img_info["file_name"] = None
 
-        height, width = img.shape[:2]
-        img_info["height"] = height
-        img_info["width"] = width
+        # height, width = img.shape[:2]
+        # img_info["height"] = height
+        # img_info["width"] = width
         img_info["raw_img"] = img
 
-        img, ratio = preproc(img, self.test_size, self.rgb_means, self.std)
-        img_info["ratio"] = ratio
-        img = torch.from_numpy(img).unsqueeze(0).float().to(self.device)
-        if self.fp16:
-            img = img.half()  # to FP16
+        # img, ratio = preproc(img, self.test_size, self.rgb_means, self.std)
+        # img_info["ratio"] = ratio
+        # img = torch.from_numpy(img).unsqueeze(0).float().to(self.device)
+        # if self.fp16:
+            # img = img.half()  # to FP16
 
         with torch.no_grad():
             timer.tic()
@@ -199,15 +199,18 @@ def imageflow_demo(predictor, extractor, vis_folder, current_time, args):
         ret_val, frame = cap.read()
         if ret_val:
             outputs, img_info = predictor.inference(frame, timer)
-            if outputs[0] is not None:
-                det = outputs[0].cpu().detach().numpy()
+            if outputs is not None:
+                det = outputs
                 scale = min(1440/width, 800/height)
                 det /= scale
+          
                 rows_to_remove = np.any(det[:, 0:4] < 1, axis=1) # remove edge detection
                 det = det[~rows_to_remove]
-                cropped_imgs = [frame[max(0,int(y1)):min(height,int(y2)),max(0,int(x1)):min(width,int(x2))] for x1,y1,x2,y2,_,_,_ in det]
+                cropped_imgs = [frame[max(0,int(y1)):min(height,int(y2)),max(0,int(x1)):min(width,int(x2))] for x1,y1,x2,y2,_,_ in det]
                 embs = extractor(cropped_imgs)
                 embs = embs.cpu().detach().numpy()
+                det = np.array(det)
+                det = det[:, :-1]
                 online_targets = tracker.update(det, embs)
                 online_tlwhs = []
                 online_ids = []
@@ -272,7 +275,7 @@ def main(exp, args):
     # logger.info("Model Summary: {}".format(get_model_info(model, exp.test_size)))
     # model.eval()
 
-    model = YOLO("./Deep-EIoU/checkpoints/best.pt")
+    model = YOLO("/content/drive/MyDrive/best.pt")
 
     # if not args.trt:
     #     if args.ckpt is None:
