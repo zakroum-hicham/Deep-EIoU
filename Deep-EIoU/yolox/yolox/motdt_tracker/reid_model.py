@@ -243,8 +243,8 @@ def load_reid_model(ckpt):
 
 
 def im_preprocess(image):
-    image = np.asarray(image, float32)
-    image -= np.array([104, 117, 123], dtype=float32).reshape(1, 1, -1)
+    image = np.asarray(image, float)
+    image -= np.array([104, 117, 123], dtype=float).reshape(1, 1, -1)
     image = image.transpose((2, 0, 1))
     return image
 
@@ -261,7 +261,7 @@ def extract_reid_features(reid_model, image, tlbrs):
         return torch.FloatTensor()
 
     patches = extract_image_patches(image, tlbrs)
-    patches = np.asarray([im_preprocess(cv2.resize(p, reid_model.inp_size)) for p in patches], dtype=float32)
+    patches = np.asarray([im_preprocess(cv2.resize(p, reid_model.inp_size)) for p in patches], dtype=float)
 
     with torch.no_grad():
         im_var = Variable(torch.from_numpy(patches))

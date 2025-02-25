@@ -136,7 +136,7 @@ def export_tflite(file, half):
             --model_output_path {output} \
             --output_pb \
             --output_saved_model \
-            --output_no_quant_float32_tflite \
+            --output_no_quant_float_tflite \
             --output_dynamic_range_quant_tflite"
         subprocess.check_output(cmd.split())  # export
 

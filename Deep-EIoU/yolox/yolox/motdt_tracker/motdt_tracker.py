@@ -237,8 +237,8 @@ class OnlineTracker(object):
             tracks = [STrack(t.self_tracking(image), 0.6 * t.tracklet_score(), from_det=False)
                         for t in itertools.chain(self.tracked_stracks, self.lost_stracks) if t.is_activated]
             detections.extend(tracks)
-        rois = np.asarray([d.tlbr for d in detections], dtype=float32)
-        scores = np.asarray([d.score for d in detections], dtype=float32)
+        rois = np.asarray([d.tlbr for d in detections], dtype=float)
+        scores = np.asarray([d.score for d in detections], dtype=float)
         # nms
         if len(detections) > 0:
             nms_out_index = torchvision.ops.batched_nms(

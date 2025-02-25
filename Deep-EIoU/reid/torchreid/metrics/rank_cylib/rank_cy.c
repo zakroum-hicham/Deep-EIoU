@@ -1193,15 +1193,15 @@ typedef npy_uint64 __pyx_t_5numpy_uint64_t;
 /* "../../../anaconda3/envs/torchreid/lib/python3.7/site-packages/numpy/__init__.pxd":704
  * #ctypedef npy_uint128    uint128_t
  * 
- * ctypedef npy_float32    float32_t             # <<<<<<<<<<<<<<
+ * ctypedef npy_float    float_t             # <<<<<<<<<<<<<<
  * ctypedef npy_float64    float64_t
  * #ctypedef npy_float80    float80_t
  */
-typedef npy_float32 __pyx_t_5numpy_float32_t;
+typedef npy_float __pyx_t_5numpy_float_t;
 
 /* "../../../anaconda3/envs/torchreid/lib/python3.7/site-packages/numpy/__init__.pxd":705
  * 
- * ctypedef npy_float32    float32_t
+ * ctypedef npy_float    float_t
  * ctypedef npy_float64    float64_t             # <<<<<<<<<<<<<<
  * #ctypedef npy_float80    float80_t
  * #ctypedef npy_float128   float128_t
@@ -1378,7 +1378,7 @@ struct __pyx_opt_args_9torchreid_7metrics_10rank_cylib_7rank_cy_evaluate_cy;
  * 
  * # Main interface
  * cpdef evaluate_cy(distmat, q_pids, g_pids, q_camids, g_camids, max_rank, use_metric_cuhk03=False):             # <<<<<<<<<<<<<<
- *     distmat = np.asarray(distmat, dtype=float32)
+ *     distmat = np.asarray(distmat, dtype=float)
  *     q_pids = np.asarray(q_pids, dtype=np.int64)
  */
 struct __pyx_opt_args_9torchreid_7metrics_10rank_cylib_7rank_cy_evaluate_cy {
@@ -2461,7 +2461,7 @@ static const char __pyx_k_update[] = "update";
 static const char __pyx_k_argsort[] = "argsort";
 static const char __pyx_k_asarray[] = "asarray";
 static const char __pyx_k_distmat[] = "distmat";
-static const char __pyx_k_float32[] = "float32";
+static const char __pyx_k_float[] = "float";
 static const char __pyx_k_fortran[] = "fortran";
 static const char __pyx_k_memview[] = "memview";
 static const char __pyx_k_newaxis[] = "newaxis";
@@ -2576,7 +2576,7 @@ static PyObject *__pyx_n_s_encode;
 static PyObject *__pyx_n_s_enumerate;
 static PyObject *__pyx_n_s_error;
 static PyObject *__pyx_n_s_flags;
-static PyObject *__pyx_n_s_float32;
+static PyObject *__pyx_n_s_float;
 static PyObject *__pyx_n_s_format;
 static PyObject *__pyx_n_s_fortran;
 static PyObject *__pyx_n_u_fortran;
@@ -2731,7 +2731,7 @@ static PyObject *__pyx_codeobj__28;
  * 
  * # Main interface
  * cpdef evaluate_cy(distmat, q_pids, g_pids, q_camids, g_camids, max_rank, use_metric_cuhk03=False):             # <<<<<<<<<<<<<<
- *     distmat = np.asarray(distmat, dtype=float32)
+ *     distmat = np.asarray(distmat, dtype=float)
  *     q_pids = np.asarray(q_pids, dtype=np.int64)
  */
 
@@ -2770,7 +2770,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_evaluate_cy(P
   /* "torchreid/metrics/rank_cylib/rank_cy.pyx":27
  * # Main interface
  * cpdef evaluate_cy(distmat, q_pids, g_pids, q_camids, g_camids, max_rank, use_metric_cuhk03=False):
- *     distmat = np.asarray(distmat, dtype=float32)             # <<<<<<<<<<<<<<
+ *     distmat = np.asarray(distmat, dtype=float)             # <<<<<<<<<<<<<<
  *     q_pids = np.asarray(q_pids, dtype=np.int64)
  *     g_pids = np.asarray(g_pids, dtype=np.int64)
  */
@@ -2788,7 +2788,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_evaluate_cy(P
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 27, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_float32); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 27, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_float); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 27, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_5) < 0) __PYX_ERR(0, 27, __pyx_L1_error)
@@ -2803,7 +2803,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_evaluate_cy(P
 
   /* "torchreid/metrics/rank_cylib/rank_cy.pyx":28
  * cpdef evaluate_cy(distmat, q_pids, g_pids, q_camids, g_camids, max_rank, use_metric_cuhk03=False):
- *     distmat = np.asarray(distmat, dtype=float32)
+ *     distmat = np.asarray(distmat, dtype=float)
  *     q_pids = np.asarray(q_pids, dtype=np.int64)             # <<<<<<<<<<<<<<
  *     g_pids = np.asarray(g_pids, dtype=np.int64)
  *     q_camids = np.asarray(q_camids, dtype=np.int64)
@@ -2836,7 +2836,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_evaluate_cy(P
   __pyx_t_4 = 0;
 
   /* "torchreid/metrics/rank_cylib/rank_cy.pyx":29
- *     distmat = np.asarray(distmat, dtype=float32)
+ *     distmat = np.asarray(distmat, dtype=float)
  *     q_pids = np.asarray(q_pids, dtype=np.int64)
  *     g_pids = np.asarray(g_pids, dtype=np.int64)             # <<<<<<<<<<<<<<
  *     q_camids = np.asarray(q_camids, dtype=np.int64)
@@ -3030,7 +3030,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_evaluate_cy(P
  * 
  * # Main interface
  * cpdef evaluate_cy(distmat, q_pids, g_pids, q_camids, g_camids, max_rank, use_metric_cuhk03=False):             # <<<<<<<<<<<<<<
- *     distmat = np.asarray(distmat, dtype=float32)
+ *     distmat = np.asarray(distmat, dtype=float)
  *     q_pids = np.asarray(q_pids, dtype=np.int64)
  */
 
@@ -3413,7 +3413,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
  *         int64_t[:,:] indices = np.argsort(distmat, axis=1)
  *         int64_t[:,:] matches = (np.asarray(g_pids)[np.asarray(indices)] == np.asarray(q_pids)[:, np.newaxis]).astype(np.int64)             # <<<<<<<<<<<<<<
  * 
- *         float[:,:] all_cmc = np.zeros((num_q, max_rank), dtype=float32)
+ *         float[:,:] all_cmc = np.zeros((num_q, max_rank), dtype=float)
  */
   __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 50, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
@@ -3541,8 +3541,8 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
   /* "torchreid/metrics/rank_cylib/rank_cy.pyx":52
  *         int64_t[:,:] matches = (np.asarray(g_pids)[np.asarray(indices)] == np.asarray(q_pids)[:, np.newaxis]).astype(np.int64)
  * 
- *         float[:,:] all_cmc = np.zeros((num_q, max_rank), dtype=float32)             # <<<<<<<<<<<<<<
- *         float[:] all_AP = np.zeros(num_q, dtype=float32)
+ *         float[:,:] all_cmc = np.zeros((num_q, max_rank), dtype=float)             # <<<<<<<<<<<<<<
+ *         float[:] all_AP = np.zeros(num_q, dtype=float)
  *         float num_valid_q = 0. # number of valid query
  */
   __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 52, __pyx_L1_error)
@@ -3571,7 +3571,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_float32); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 52, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_float); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dtype, __pyx_t_2) < 0) __PYX_ERR(0, 52, __pyx_L1_error)
@@ -3589,8 +3589,8 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
 
   /* "torchreid/metrics/rank_cylib/rank_cy.pyx":53
  * 
- *         float[:,:] all_cmc = np.zeros((num_q, max_rank), dtype=float32)
- *         float[:] all_AP = np.zeros(num_q, dtype=float32)             # <<<<<<<<<<<<<<
+ *         float[:,:] all_cmc = np.zeros((num_q, max_rank), dtype=float)
+ *         float[:] all_AP = np.zeros(num_q, dtype=float)             # <<<<<<<<<<<<<<
  *         float num_valid_q = 0. # number of valid query
  * 
  */
@@ -3610,7 +3610,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_float32); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 53, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_float); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_dtype, __pyx_t_5) < 0) __PYX_ERR(0, 53, __pyx_L1_error)
@@ -3627,8 +3627,8 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
   __pyx_t_10.data = NULL;
 
   /* "torchreid/metrics/rank_cylib/rank_cy.pyx":54
- *         float[:,:] all_cmc = np.zeros((num_q, max_rank), dtype=float32)
- *         float[:] all_AP = np.zeros(num_q, dtype=float32)
+ *         float[:,:] all_cmc = np.zeros((num_q, max_rank), dtype=float)
+ *         float[:] all_AP = np.zeros(num_q, dtype=float)
  *         float num_valid_q = 0. # number of valid query             # <<<<<<<<<<<<<<
  * 
  *         int64_t q_idx, q_pid, q_camid, g_idx
@@ -3677,8 +3677,8 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
   /* "torchreid/metrics/rank_cylib/rank_cy.pyx":60
  *         int64_t keep
  * 
- *         float[:] raw_cmc = np.zeros(num_g, dtype=float32) # binary vector, positions with value 1 are correct matches             # <<<<<<<<<<<<<<
- *         float[:] masked_raw_cmc = np.zeros(num_g, dtype=float32)
+ *         float[:] raw_cmc = np.zeros(num_g, dtype=float) # binary vector, positions with value 1 are correct matches             # <<<<<<<<<<<<<<
+ *         float[:] masked_raw_cmc = np.zeros(num_g, dtype=float)
  *         float[:] cmc, masked_cmc
  */
   __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 60, __pyx_L1_error)
@@ -3697,7 +3697,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 60, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_float32); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 60, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_float); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 60, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(0, 60, __pyx_L1_error)
@@ -3715,8 +3715,8 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
 
   /* "torchreid/metrics/rank_cylib/rank_cy.pyx":61
  * 
- *         float[:] raw_cmc = np.zeros(num_g, dtype=float32) # binary vector, positions with value 1 are correct matches
- *         float[:] masked_raw_cmc = np.zeros(num_g, dtype=float32)             # <<<<<<<<<<<<<<
+ *         float[:] raw_cmc = np.zeros(num_g, dtype=float) # binary vector, positions with value 1 are correct matches
+ *         float[:] masked_raw_cmc = np.zeros(num_g, dtype=float)             # <<<<<<<<<<<<<<
  *         float[:] cmc, masked_cmc
  *         int64_t num_g_real, num_g_real_masked, rank_idx, rnd_idx
  */
@@ -3736,7 +3736,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 61, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_float32); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 61, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_float); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 61, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dtype, __pyx_t_2) < 0) __PYX_ERR(0, 61, __pyx_L1_error)
@@ -3755,7 +3755,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
   /* "torchreid/metrics/rank_cylib/rank_cy.pyx":69
  * 
  *         float num_rel
- *         float[:] tmp_cmc = np.zeros(num_g, dtype=float32)             # <<<<<<<<<<<<<<
+ *         float[:] tmp_cmc = np.zeros(num_g, dtype=float)             # <<<<<<<<<<<<<<
  *         float tmp_cmc_sum
  * 
  */
@@ -3775,7 +3775,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_float32); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 69, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_float); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_dtype, __pyx_t_5) < 0) __PYX_ERR(0, 69, __pyx_L1_error)
@@ -4085,7 +4085,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
  *         for g_idx in range(num_g_real):
  *             g_pids_dict[kept_g_pids[g_idx]].append(g_idx)             # <<<<<<<<<<<<<<
  * 
- *         cmc = np.zeros(max_rank, dtype=float32)
+ *         cmc = np.zeros(max_rank, dtype=float)
  */
       __pyx_t_19 = __pyx_v_g_idx;
       __pyx_t_22 = (*((int64_t *) ( /* dim=0 */ (__pyx_v_kept_g_pids.data + __pyx_t_19 * __pyx_v_kept_g_pids.strides[0]) )));
@@ -4101,7 +4101,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
     /* "torchreid/metrics/rank_cylib/rank_cy.pyx":101
  *             g_pids_dict[kept_g_pids[g_idx]].append(g_idx)
  * 
- *         cmc = np.zeros(max_rank, dtype=float32)             # <<<<<<<<<<<<<<
+ *         cmc = np.zeros(max_rank, dtype=float)             # <<<<<<<<<<<<<<
  *         for _ in range(num_repeats):
  *             mask = np.zeros(num_g_real, dtype=np.int64)
  */
@@ -4121,7 +4121,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 101, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_float32); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 101, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_float); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 101, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(0, 101, __pyx_L1_error)
@@ -4140,7 +4140,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
 
     /* "torchreid/metrics/rank_cylib/rank_cy.pyx":102
  * 
- *         cmc = np.zeros(max_rank, dtype=float32)
+ *         cmc = np.zeros(max_rank, dtype=float)
  *         for _ in range(num_repeats):             # <<<<<<<<<<<<<<
  *             mask = np.zeros(num_g_real, dtype=np.int64)
  * 
@@ -4194,7 +4194,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
       __pyx_t_5 = 0;
 
       /* "torchreid/metrics/rank_cylib/rank_cy.pyx":103
- *         cmc = np.zeros(max_rank, dtype=float32)
+ *         cmc = np.zeros(max_rank, dtype=float)
  *         for _ in range(num_repeats):
  *             mask = np.zeros(num_g_real, dtype=np.int64)             # <<<<<<<<<<<<<<
  * 
@@ -4450,7 +4450,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
  *                     masked_raw_cmc[num_g_real_masked] = raw_cmc[g_idx]
  *                     num_g_real_masked += 1             # <<<<<<<<<<<<<<
  * 
- *             masked_cmc = np.zeros(num_g, dtype=float32)
+ *             masked_cmc = np.zeros(num_g, dtype=float)
  */
           __pyx_v_num_g_real_masked = (__pyx_v_num_g_real_masked + 1);
 
@@ -4467,7 +4467,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
       /* "torchreid/metrics/rank_cylib/rank_cy.pyx":117
  *                     num_g_real_masked += 1
  * 
- *             masked_cmc = np.zeros(num_g, dtype=float32)             # <<<<<<<<<<<<<<
+ *             masked_cmc = np.zeros(num_g, dtype=float)             # <<<<<<<<<<<<<<
  *             function_cumsum(masked_raw_cmc, masked_cmc, num_g_real_masked)
  *             for g_idx in range(num_g_real_masked):
  */
@@ -4487,7 +4487,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_float32); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 117, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_float); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 117, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_dtype, __pyx_t_2) < 0) __PYX_ERR(0, 117, __pyx_L1_error)
@@ -4506,7 +4506,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
 
       /* "torchreid/metrics/rank_cylib/rank_cy.pyx":118
  * 
- *             masked_cmc = np.zeros(num_g, dtype=float32)
+ *             masked_cmc = np.zeros(num_g, dtype=float)
  *             function_cumsum(masked_raw_cmc, masked_cmc, num_g_real_masked)             # <<<<<<<<<<<<<<
  *             for g_idx in range(num_g_real_masked):
  *                 if masked_cmc[g_idx] > 1:
@@ -4514,7 +4514,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
       __pyx_fuse_3__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_function_cumsum(__pyx_v_masked_raw_cmc, __pyx_v_masked_cmc, __pyx_v_num_g_real_masked);
 
       /* "torchreid/metrics/rank_cylib/rank_cy.pyx":119
- *             masked_cmc = np.zeros(num_g, dtype=float32)
+ *             masked_cmc = np.zeros(num_g, dtype=float)
  *             function_cumsum(masked_raw_cmc, masked_cmc, num_g_real_masked)
  *             for g_idx in range(num_g_real_masked):             # <<<<<<<<<<<<<<
  *                 if masked_cmc[g_idx] > 1:
@@ -4582,7 +4582,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
 
       /* "torchreid/metrics/rank_cylib/rank_cy.pyx":102
  * 
- *         cmc = np.zeros(max_rank, dtype=float32)
+ *         cmc = np.zeros(max_rank, dtype=float)
  *         for _ in range(num_repeats):             # <<<<<<<<<<<<<<
  *             mask = np.zeros(num_g_real, dtype=np.int64)
  * 
@@ -4716,7 +4716,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
   /* "torchreid/metrics/rank_cylib/rank_cy.pyx":142
  * 
  *     # compute averaged cmc
- *     cdef float[:] avg_cmc = np.zeros(max_rank, dtype=float32)             # <<<<<<<<<<<<<<
+ *     cdef float[:] avg_cmc = np.zeros(max_rank, dtype=float)             # <<<<<<<<<<<<<<
  *     for rank_idx in range(max_rank):
  *         for q_idx in range(num_q):
  */
@@ -4736,7 +4736,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 142, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_float32); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 142, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_float); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 142, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dtype, __pyx_t_8) < 0) __PYX_ERR(0, 142, __pyx_L1_error)
@@ -4754,7 +4754,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
 
   /* "torchreid/metrics/rank_cylib/rank_cy.pyx":143
  *     # compute averaged cmc
- *     cdef float[:] avg_cmc = np.zeros(max_rank, dtype=float32)
+ *     cdef float[:] avg_cmc = np.zeros(max_rank, dtype=float)
  *     for rank_idx in range(max_rank):             # <<<<<<<<<<<<<<
  *         for q_idx in range(num_q):
  *             avg_cmc[rank_idx] += all_cmc[q_idx, rank_idx]
@@ -4765,7 +4765,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
     __pyx_v_rank_idx = __pyx_t_14;
 
     /* "torchreid/metrics/rank_cylib/rank_cy.pyx":144
- *     cdef float[:] avg_cmc = np.zeros(max_rank, dtype=float32)
+ *     cdef float[:] avg_cmc = np.zeros(max_rank, dtype=float)
  *     for rank_idx in range(max_rank):
  *         for q_idx in range(num_q):             # <<<<<<<<<<<<<<
  *             avg_cmc[rank_idx] += all_cmc[q_idx, rank_idx]
@@ -4877,7 +4877,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_cuhk03_c
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 153, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_float32); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 153, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_float); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 153, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_4 = NULL;
@@ -5274,7 +5274,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_market15
  *         int64_t[:,:] indices = np.argsort(distmat, axis=1)
  *         int64_t[:,:] matches = (np.asarray(g_pids)[np.asarray(indices)] == np.asarray(q_pids)[:, np.newaxis]).astype(np.int64)             # <<<<<<<<<<<<<<
  * 
- *         float[:,:] all_cmc = np.zeros((num_q, max_rank), dtype=float32)
+ *         float[:,:] all_cmc = np.zeros((num_q, max_rank), dtype=float)
  */
   __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 168, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
@@ -5402,8 +5402,8 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_market15
   /* "torchreid/metrics/rank_cylib/rank_cy.pyx":170
  *         int64_t[:,:] matches = (np.asarray(g_pids)[np.asarray(indices)] == np.asarray(q_pids)[:, np.newaxis]).astype(np.int64)
  * 
- *         float[:,:] all_cmc = np.zeros((num_q, max_rank), dtype=float32)             # <<<<<<<<<<<<<<
- *         float[:] all_AP = np.zeros(num_q, dtype=float32)
+ *         float[:,:] all_cmc = np.zeros((num_q, max_rank), dtype=float)             # <<<<<<<<<<<<<<
+ *         float[:] all_AP = np.zeros(num_q, dtype=float)
  *         float num_valid_q = 0. # number of valid query
  */
   __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 170, __pyx_L1_error)
@@ -5432,7 +5432,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_market15
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 170, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_float32); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 170, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_float); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 170, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dtype, __pyx_t_2) < 0) __PYX_ERR(0, 170, __pyx_L1_error)
@@ -5450,8 +5450,8 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_market15
 
   /* "torchreid/metrics/rank_cylib/rank_cy.pyx":171
  * 
- *         float[:,:] all_cmc = np.zeros((num_q, max_rank), dtype=float32)
- *         float[:] all_AP = np.zeros(num_q, dtype=float32)             # <<<<<<<<<<<<<<
+ *         float[:,:] all_cmc = np.zeros((num_q, max_rank), dtype=float)
+ *         float[:] all_AP = np.zeros(num_q, dtype=float)             # <<<<<<<<<<<<<<
  *         float num_valid_q = 0. # number of valid query
  * 
  */
@@ -5471,7 +5471,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_market15
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 171, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_float32); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 171, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_float); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 171, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_dtype, __pyx_t_5) < 0) __PYX_ERR(0, 171, __pyx_L1_error)
@@ -5488,8 +5488,8 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_market15
   __pyx_t_10.data = NULL;
 
   /* "torchreid/metrics/rank_cylib/rank_cy.pyx":172
- *         float[:,:] all_cmc = np.zeros((num_q, max_rank), dtype=float32)
- *         float[:] all_AP = np.zeros(num_q, dtype=float32)
+ *         float[:,:] all_cmc = np.zeros((num_q, max_rank), dtype=float)
+ *         float[:] all_AP = np.zeros(num_q, dtype=float)
  *         float num_valid_q = 0. # number of valid query             # <<<<<<<<<<<<<<
  * 
  *         int64_t q_idx, q_pid, q_camid, g_idx
@@ -5538,8 +5538,8 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_market15
   /* "torchreid/metrics/rank_cylib/rank_cy.pyx":178
  *         int64_t keep
  * 
- *         float[:] raw_cmc = np.zeros(num_g, dtype=float32) # binary vector, positions with value 1 are correct matches             # <<<<<<<<<<<<<<
- *         float[:] cmc = np.zeros(num_g, dtype=float32)
+ *         float[:] raw_cmc = np.zeros(num_g, dtype=float) # binary vector, positions with value 1 are correct matches             # <<<<<<<<<<<<<<
+ *         float[:] cmc = np.zeros(num_g, dtype=float)
  *         int64_t num_g_real, rank_idx
  */
   __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 178, __pyx_L1_error)
@@ -5558,7 +5558,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_market15
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 178, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_float32); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 178, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_float); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 178, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(0, 178, __pyx_L1_error)
@@ -5576,8 +5576,8 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_market15
 
   /* "torchreid/metrics/rank_cylib/rank_cy.pyx":179
  * 
- *         float[:] raw_cmc = np.zeros(num_g, dtype=float32) # binary vector, positions with value 1 are correct matches
- *         float[:] cmc = np.zeros(num_g, dtype=float32)             # <<<<<<<<<<<<<<
+ *         float[:] raw_cmc = np.zeros(num_g, dtype=float) # binary vector, positions with value 1 are correct matches
+ *         float[:] cmc = np.zeros(num_g, dtype=float)             # <<<<<<<<<<<<<<
  *         int64_t num_g_real, rank_idx
  *         uint64_t meet_condition
  */
@@ -5597,7 +5597,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_market15
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 179, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_float32); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 179, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_float); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 179, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dtype, __pyx_t_2) < 0) __PYX_ERR(0, 179, __pyx_L1_error)
@@ -5616,7 +5616,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_market15
   /* "torchreid/metrics/rank_cylib/rank_cy.pyx":184
  * 
  *         float num_rel
- *         float[:] tmp_cmc = np.zeros(num_g, dtype=float32)             # <<<<<<<<<<<<<<
+ *         float[:] tmp_cmc = np.zeros(num_g, dtype=float)             # <<<<<<<<<<<<<<
  *         float tmp_cmc_sum
  * 
  */
@@ -5636,7 +5636,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_market15
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 184, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_float32); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 184, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_float); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 184, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_dtype, __pyx_t_5) < 0) __PYX_ERR(0, 184, __pyx_L1_error)
@@ -6028,7 +6028,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_market15
   /* "torchreid/metrics/rank_cylib/rank_cy.pyx":232
  * 
  *     # compute averaged cmc
- *     cdef float[:] avg_cmc = np.zeros(max_rank, dtype=float32)             # <<<<<<<<<<<<<<
+ *     cdef float[:] avg_cmc = np.zeros(max_rank, dtype=float)             # <<<<<<<<<<<<<<
  *     for rank_idx in range(max_rank):
  *         for q_idx in range(num_q):
  */
@@ -6048,7 +6048,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_market15
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 232, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_float32); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 232, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_float); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 232, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_dtype, __pyx_t_3) < 0) __PYX_ERR(0, 232, __pyx_L1_error)
@@ -6066,7 +6066,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_market15
 
   /* "torchreid/metrics/rank_cylib/rank_cy.pyx":233
  *     # compute averaged cmc
- *     cdef float[:] avg_cmc = np.zeros(max_rank, dtype=float32)
+ *     cdef float[:] avg_cmc = np.zeros(max_rank, dtype=float)
  *     for rank_idx in range(max_rank):             # <<<<<<<<<<<<<<
  *         for q_idx in range(num_q):
  *             avg_cmc[rank_idx] += all_cmc[q_idx, rank_idx]
@@ -6077,7 +6077,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_market15
     __pyx_v_rank_idx = __pyx_t_14;
 
     /* "torchreid/metrics/rank_cylib/rank_cy.pyx":234
- *     cdef float[:] avg_cmc = np.zeros(max_rank, dtype=float32)
+ *     cdef float[:] avg_cmc = np.zeros(max_rank, dtype=float)
  *     for rank_idx in range(max_rank):
  *         for q_idx in range(num_q):             # <<<<<<<<<<<<<<
  *             avg_cmc[rank_idx] += all_cmc[q_idx, rank_idx]
@@ -6189,7 +6189,7 @@ static PyObject *__pyx_f_9torchreid_7metrics_10rank_cylib_7rank_cy_eval_market15
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 243, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_float32); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 243, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_float); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 243, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -21351,7 +21351,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_enumerate, __pyx_k_enumerate, sizeof(__pyx_k_enumerate), 0, 0, 1, 1},
   {&__pyx_n_s_error, __pyx_k_error, sizeof(__pyx_k_error), 0, 0, 1, 1},
   {&__pyx_n_s_flags, __pyx_k_flags, sizeof(__pyx_k_flags), 0, 0, 1, 1},
-  {&__pyx_n_s_float32, __pyx_k_float32, sizeof(__pyx_k_float32), 0, 0, 1, 1},
+  {&__pyx_n_s_float, __pyx_k_float, sizeof(__pyx_k_float), 0, 0, 1, 1},
   {&__pyx_n_s_format, __pyx_k_format, sizeof(__pyx_k_format), 0, 0, 1, 1},
   {&__pyx_n_s_fortran, __pyx_k_fortran, sizeof(__pyx_k_fortran), 0, 0, 1, 1},
   {&__pyx_n_u_fortran, __pyx_k_fortran, sizeof(__pyx_k_fortran), 0, 1, 0, 1},
@@ -21444,7 +21444,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         int64_t[:,:] indices = np.argsort(distmat, axis=1)
  *         int64_t[:,:] matches = (np.asarray(g_pids)[np.asarray(indices)] == np.asarray(q_pids)[:, np.newaxis]).astype(np.int64)             # <<<<<<<<<<<<<<
  * 
- *         float[:,:] all_cmc = np.zeros((num_q, max_rank), dtype=float32)
+ *         float[:,:] all_cmc = np.zeros((num_q, max_rank), dtype=float)
  */
   __pyx_slice_ = PySlice_New(Py_None, Py_None, Py_None); if (unlikely(!__pyx_slice_)) __PYX_ERR(0, 50, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_slice_);

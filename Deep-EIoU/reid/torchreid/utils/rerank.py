@@ -8,7 +8,7 @@ Created on Mon Jun 26 14:46:56 2017
 Modified by Houjing Huang, 2017-12-22.
 - This version accepts distance matrix instead of raw features.
 - The difference of `/` division between python 2 and 3 is handled.
-- numpy.float16 is replaced by numpy.float32 for numerical precision.
+- numpy.float16 is replaced by numpy.float for numerical precision.
 
 CVPR2017 paper:Zhong Z, Zheng L, Cao D, et al. Re-ranking Person Re-identification with k-reciprocal Encoding[J]. 2017.
 url:http://openaccess.thecvf.com/content_cvpr_2017/papers/Zhong_Re-Ranking_Person_Re-Identification_CVPR_2017_paper.pdf
@@ -82,7 +82,7 @@ def re_ranking(q_g_dist, q_q_dist, g_g_dist, k1=20, k2=6, lambda_value=0.3):
         V[i, k_reciprocal_expansion_index] = 1. * weight / np.sum(weight)
     original_dist = original_dist[:query_num, ]
     if k2 != 1:
-        V_qe = np.zeros_like(V, dtype=float32)
+        V_qe = np.zeros_like(V, dtype=float)
         for i in range(all_num):
             V_qe[i, :] = np.mean(V[initial_rank[i, :k2], :], axis=0)
         V = V_qe
@@ -92,10 +92,10 @@ def re_ranking(q_g_dist, q_q_dist, g_g_dist, k1=20, k2=6, lambda_value=0.3):
     for i in range(gallery_num):
         invIndex.append(np.where(V[:, i] != 0)[0])
 
-    jaccard_dist = np.zeros_like(original_dist, dtype=float32)
+    jaccard_dist = np.zeros_like(original_dist, dtype=float)
 
     for i in range(query_num):
-        temp_min = np.zeros(shape=[1, gallery_num], dtype=float32)
+        temp_min = np.zeros(shape=[1, gallery_num], dtype=float)
         indNonZero = np.where(V[i, :] != 0)[0]
         indImages = []
         indImages = [invIndex[ind] for ind in indNonZero]

@@ -77,7 +77,7 @@ def nearest_reid_distance(tracks, detections, metric='cosine'):
     if cost_matrix.size == 0:
         return cost_matrix
 
-    det_features = np.asarray([track.curr_feature for track in detections], dtype=float32)
+    det_features = np.asarray([track.curr_feature for track in detections], dtype=float)
     for i, track in enumerate(tracks):
         cost_matrix[i, :] = np.maximum(0.0, cdist(track.features, det_features, metric).min(axis=0))
 
@@ -96,8 +96,8 @@ def mean_reid_distance(tracks, detections, metric='cosine'):
     if cost_matrix.size == 0:
         return cost_matrix
 
-    track_features = np.asarray([track.curr_feature for track in tracks], dtype=float32)
-    det_features = np.asarray([track.curr_feature for track in detections], dtype=float32)
+    track_features = np.asarray([track.curr_feature for track in tracks], dtype=float)
+    det_features = np.asarray([track.curr_feature for track in detections], dtype=float)
     cost_matrix = cdist(track_features, det_features, metric)
 
     return cost_matrix
