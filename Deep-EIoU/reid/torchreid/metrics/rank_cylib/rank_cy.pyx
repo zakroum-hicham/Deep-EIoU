@@ -24,7 +24,7 @@ Credit to https://github.com/luzai
 
 # Main interface
 cpdef evaluate_cy(distmat, q_pids, g_pids, q_camids, g_camids, max_rank, use_metric_cuhk03=False):
-    distmat = np.asarray(distmat, dtype=np.float32)
+    distmat = np.asarray(distmat, dtype=float32)
     q_pids = np.asarray(q_pids, dtype=np.int64)
     g_pids = np.asarray(g_pids, dtype=np.int64)
     q_camids = np.asarray(q_camids, dtype=np.int64)
@@ -49,16 +49,16 @@ cpdef eval_cuhk03_cy(float[:,:] distmat, int64_t[:] q_pids, int64_t[:]g_pids,
         int64_t[:,:] indices = np.argsort(distmat, axis=1)
         int64_t[:,:] matches = (np.asarray(g_pids)[np.asarray(indices)] == np.asarray(q_pids)[:, np.newaxis]).astype(np.int64)
 
-        float[:,:] all_cmc = np.zeros((num_q, max_rank), dtype=np.float32)
-        float[:] all_AP = np.zeros(num_q, dtype=np.float32)
+        float[:,:] all_cmc = np.zeros((num_q, max_rank), dtype=float32)
+        float[:] all_AP = np.zeros(num_q, dtype=float32)
         float num_valid_q = 0. # number of valid query
 
         int64_t q_idx, q_pid, q_camid, g_idx
         int64_t[:] order = np.zeros(num_g, dtype=np.int64)
         int64_t keep
 
-        float[:] raw_cmc = np.zeros(num_g, dtype=np.float32) # binary vector, positions with value 1 are correct matches
-        float[:] masked_raw_cmc = np.zeros(num_g, dtype=np.float32)
+        float[:] raw_cmc = np.zeros(num_g, dtype=float32) # binary vector, positions with value 1 are correct matches
+        float[:] masked_raw_cmc = np.zeros(num_g, dtype=float32)
         float[:] cmc, masked_cmc
         int64_t num_g_real, num_g_real_masked, rank_idx, rnd_idx
         uint64_t meet_condition
@@ -66,7 +66,7 @@ cpdef eval_cuhk03_cy(float[:,:] distmat, int64_t[:] q_pids, int64_t[:]g_pids,
         int64_t[:] kept_g_pids, mask
 
         float num_rel
-        float[:] tmp_cmc = np.zeros(num_g, dtype=np.float32)
+        float[:] tmp_cmc = np.zeros(num_g, dtype=float32)
         float tmp_cmc_sum
 
     for q_idx in range(num_q):
@@ -98,7 +98,7 @@ cpdef eval_cuhk03_cy(float[:,:] distmat, int64_t[:] q_pids, int64_t[:]g_pids,
         for g_idx in range(num_g_real):
             g_pids_dict[kept_g_pids[g_idx]].append(g_idx)
 
-        cmc = np.zeros(max_rank, dtype=np.float32)
+        cmc = np.zeros(max_rank, dtype=float32)
         for _ in range(num_repeats):
             mask = np.zeros(num_g_real, dtype=np.int64)
 
@@ -114,7 +114,7 @@ cpdef eval_cuhk03_cy(float[:,:] distmat, int64_t[:] q_pids, int64_t[:]g_pids,
                     masked_raw_cmc[num_g_real_masked] = raw_cmc[g_idx]
                     num_g_real_masked += 1
 
-            masked_cmc = np.zeros(num_g, dtype=np.float32)
+            masked_cmc = np.zeros(num_g, dtype=float32)
             function_cumsum(masked_raw_cmc, masked_cmc, num_g_real_masked)
             for g_idx in range(num_g_real_masked):
                 if masked_cmc[g_idx] > 1:
@@ -139,7 +139,7 @@ cpdef eval_cuhk03_cy(float[:,:] distmat, int64_t[:] q_pids, int64_t[:]g_pids,
     assert num_valid_q > 0, 'Error: all query identities do not appear in gallery'
 
     # compute averaged cmc
-    cdef float[:] avg_cmc = np.zeros(max_rank, dtype=np.float32)
+    cdef float[:] avg_cmc = np.zeros(max_rank, dtype=float32)
     for rank_idx in range(max_rank):
         for q_idx in range(num_q):
             avg_cmc[rank_idx] += all_cmc[q_idx, rank_idx]
@@ -150,7 +150,7 @@ cpdef eval_cuhk03_cy(float[:,:] distmat, int64_t[:] q_pids, int64_t[:]g_pids,
         mAP += all_AP[q_idx]
     mAP /= num_valid_q
 
-    return np.asarray(avg_cmc).astype(np.float32), mAP
+    return np.asarray(avg_cmc).astype(float32), mAP
 
 
 cpdef eval_market1501_cy(float[:,:] distmat, int64_t[:] q_pids, int64_t[:]g_pids,
@@ -167,21 +167,21 @@ cpdef eval_market1501_cy(float[:,:] distmat, int64_t[:] q_pids, int64_t[:]g_pids
         int64_t[:,:] indices = np.argsort(distmat, axis=1)
         int64_t[:,:] matches = (np.asarray(g_pids)[np.asarray(indices)] == np.asarray(q_pids)[:, np.newaxis]).astype(np.int64)
 
-        float[:,:] all_cmc = np.zeros((num_q, max_rank), dtype=np.float32)
-        float[:] all_AP = np.zeros(num_q, dtype=np.float32)
+        float[:,:] all_cmc = np.zeros((num_q, max_rank), dtype=float32)
+        float[:] all_AP = np.zeros(num_q, dtype=float32)
         float num_valid_q = 0. # number of valid query
 
         int64_t q_idx, q_pid, q_camid, g_idx
         int64_t[:] order = np.zeros(num_g, dtype=np.int64)
         int64_t keep
 
-        float[:] raw_cmc = np.zeros(num_g, dtype=np.float32) # binary vector, positions with value 1 are correct matches
-        float[:] cmc = np.zeros(num_g, dtype=np.float32)
+        float[:] raw_cmc = np.zeros(num_g, dtype=float32) # binary vector, positions with value 1 are correct matches
+        float[:] cmc = np.zeros(num_g, dtype=float32)
         int64_t num_g_real, rank_idx
         uint64_t meet_condition
 
         float num_rel
-        float[:] tmp_cmc = np.zeros(num_g, dtype=np.float32)
+        float[:] tmp_cmc = np.zeros(num_g, dtype=float32)
         float tmp_cmc_sum
 
     for q_idx in range(num_q):
@@ -229,7 +229,7 @@ cpdef eval_market1501_cy(float[:,:] distmat, int64_t[:] q_pids, int64_t[:]g_pids
     assert num_valid_q > 0, 'Error: all query identities do not appear in gallery'
 
     # compute averaged cmc
-    cdef float[:] avg_cmc = np.zeros(max_rank, dtype=np.float32)
+    cdef float[:] avg_cmc = np.zeros(max_rank, dtype=float32)
     for rank_idx in range(max_rank):
         for q_idx in range(num_q):
             avg_cmc[rank_idx] += all_cmc[q_idx, rank_idx]
@@ -240,7 +240,7 @@ cpdef eval_market1501_cy(float[:,:] distmat, int64_t[:] q_pids, int64_t[:]g_pids
         mAP += all_AP[q_idx]
     mAP /= num_valid_q
 
-    return np.asarray(avg_cmc).astype(np.float32), mAP
+    return np.asarray(avg_cmc).astype(float32), mAP
 
 
 # Compute the cumulative sum
