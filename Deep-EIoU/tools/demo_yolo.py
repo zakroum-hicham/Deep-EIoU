@@ -153,23 +153,7 @@ class Predictor(object):
 
     def inference(self, img, timer):
         img_info = {"id": 0}
-        # if isinstance(img, str):
-            # img_info["file_name"] = osp.basename(img)
-            # img = cv2.imread(img)
-        # else:
-            # img_info["file_name"] = None
-
-        # height, width = img.shape[:2]
-        # img_info["height"] = height
-        # img_info["width"] = width
         img_info["raw_img"] = img
-
-        # img, ratio = preproc(img, self.test_size, self.rgb_means, self.std)
-        # img_info["ratio"] = ratio
-        # img = torch.from_numpy(img).unsqueeze(0).float().to(self.device)
-        # if self.fp16:
-            # img = img.half()  # to FP16
-
         with torch.no_grad():
             timer.tic()
             outputs = self.model(img,conf=0.3, verbose=False)
